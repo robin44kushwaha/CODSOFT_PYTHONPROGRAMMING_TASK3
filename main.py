@@ -7,29 +7,29 @@ numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
 # Prompt the user for the number of letters, symbols, and numbers they want in their password
-nr_letters = (input("How many letters would you like in your password?\n"))
-nr_symbols = (input(f"How many symbols would you like?\n"))
-nr_numbers = (input(f"How many numbers would you like?\n"))
+letters_ = (input("How many letters would you like in your password?\n"))
+symbols_ = (input(f"How many symbols would you like?\n"))
+numbers_ = (input(f"How many numbers would you like?\n"))
 
 # Validate user input to ensure they are digits
-if not nr_letters.isdigit() or not nr_symbols.isdigit() or not nr_numbers.isdigit():
+if not letters_.isdigit() or not symbols_.isdigit() or not numbers_.isdigit():
   print("Invalid value, enter a number instead.")
 else:
   # generating password based on user input
   password = []
   
   random_letter = random.randint(0, 51)
-  for i in range(0, int(nr_letters)):
+  for i in range(0, int(letters_)):
     random_letter = random.randint(0, 51)
     password.append(letters[random_letter])
 
   random_number = random.randint(0,9)
-  for i in range(0, int(nr_numbers)):
+  for i in range(0, int(numbers_)):
     random_number = random.randint(0,9)
     password.append(numbers[random_number])
 
   random_symbol = random.randint(0,8)
-  for i in range(0, int(nr_symbols)):
+  for i in range(0, int(symbols_)):
     random_symbol = random.randint(0,8)
     password.append(symbols[random_symbol])
 
